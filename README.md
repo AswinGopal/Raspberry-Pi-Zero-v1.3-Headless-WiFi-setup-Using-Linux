@@ -11,9 +11,9 @@ Follow this guide only if your WiFi chipset is not natively supported by the Ras
 &nbsp;
 ## Appendix
 &nbsp;1. [Prerequisite](#1-prerequisite)  
-&nbsp;2. Enabling USB ethernet gadget mode on Pi
-&nbsp;3. Things to do once connected to Pi via USB  
-        &nbsp; &nbsp; &nbsp; 3.1. Enabling Internet access in Raspberry Pi  
+&nbsp;2. [Enabling USB ethernet gadget mode on Pi](#2-enabling-usb-ethernet-gadget-mode-on-pi)  
+&nbsp;3. [Things to do once connected to Pi via USB](#3-things-to-do-once-connected-to-pi-via-usb)  
+        &nbsp; &nbsp; &nbsp; 3.1. [Enabling Internet access in Raspberry Pi](#31-enabling-internet-access-in-raspberry-pi)  
         &nbsp; &nbsp; &nbsp; 3.2. SSH into Raspberry Pi  
         &nbsp; &nbsp; &nbsp; 3.3. Change locale settings  
         &nbsp; &nbsp; &nbsp; 3.4. Update the OS  
@@ -35,7 +35,7 @@ g) SD card
 h) [WiFi adapter](https://robu.in/product/rtl8188-mini-usb-wireless-network-card-150mbps-wifi-dongle/)
 
 &nbsp;
-## 2.Enabling USB ethernet gadget mode on Pi
+## 2. Enabling USB ethernet gadget mode on Pi
 
 To enable the gadget mode, edit ```config.txt``` and ```cmdline.txt``` files in 
 the```boot```partition of the SD card.\
