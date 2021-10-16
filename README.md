@@ -23,7 +23,7 @@ Follow this guide only if your WiFi chipset is not natively supported by the Ras
 &nbsp;  
 
 
-## 1. #Prerequisite
+## 1. Prerequisite
 
 a) Raspberry Pi Zero v1.3  
 b) USB data cable  
