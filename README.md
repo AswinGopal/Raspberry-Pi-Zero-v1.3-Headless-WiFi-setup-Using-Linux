@@ -10,7 +10,7 @@ Follow this guide only if your WiFi chipset is not natively supported by the Ras
 ***
 &nbsp;
 ## Appendix
-&nbsp;1. [Prerequisite](Prerequisite)
+&nbsp;1. [Prerequisite](Prerequisite)  
 &nbsp;2. Enabling USB ethernet gadget mode on Pi
 &nbsp;3. Things to do once connected to Pi via USB  
         &nbsp; &nbsp; &nbsp; 3.1. Enabling Internet access in Raspberry Pi  
