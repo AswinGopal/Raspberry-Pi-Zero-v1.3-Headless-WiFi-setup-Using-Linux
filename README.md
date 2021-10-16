@@ -204,7 +204,7 @@ network={
 }
 ```
 Now shutdown the Pi. Connect the WiFi adapter and power cable then turn it on.  
-
+&nbsp;  
 ## 5. Installing Pi-hole
 To install the pihole run,
 ```
