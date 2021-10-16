@@ -185,7 +185,7 @@ eg; ```sudo install-wifi 8188fu```
 Now we need to setup the WiFi to automatically connect to the access point during the next reboot.  
 &nbsp;   
 ###  WiFi configuration for auto connecting to the access point
-Add these line to ```/etc/dhcpcd.conf```;
+To give a static IP address to the WiFi, add these line to ```/etc/dhcpcd.conf```;  
 ```
 interface wlan0
         static ip_address=192.168.X.X/24
