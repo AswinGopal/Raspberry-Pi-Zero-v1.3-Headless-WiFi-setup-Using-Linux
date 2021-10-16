@@ -42,9 +42,11 @@ the```boot```partition of the SD card.\
 &nbsp;
 
 Add ```dtoverlay=dwc2``` to ```config.txt``` and\
-Add ```add modules-load=dwc2,g_ether``` after the ```rootwait``` in ```cmdline.txt```\
+Add ```add modules-load=dwc2,g_ether``` after the ```rootwait``` in ```cmdline.txt```  
 &nbsp;  
-IMPORTANT: leave a space before and after the ```add modules-load=dwc2,g_ether``` line.\
+***
+**Note**: leave a space before and after the ```add modules-load=dwc2,g_ether``` line.  
+***
 &nbsp;  
 Make an empty ```ssh``` file inside the same partition to enable SSH on boot.  
 &nbsp;  
