@@ -14,12 +14,12 @@ Follow this guide only if your WiFi chipset is not natively supported by the Ras
 &nbsp;2. [Enabling USB ethernet gadget mode on Pi](#2-enabling-usb-ethernet-gadget-mode-on-pi)  
 &nbsp;3. [Things to do once connected to Pi via USB](#3-things-to-do-once-connected-to-pi-via-usb)  
         &nbsp; &nbsp; &nbsp; 3.1. [Enabling Internet access in Raspberry Pi](#31-enabling-internet-access-in-raspberry-pi)  
-        &nbsp; &nbsp; &nbsp; 3.2. SSH into Raspberry Pi  
-        &nbsp; &nbsp; &nbsp; 3.3. Change locale settings  
-        &nbsp; &nbsp; &nbsp; 3.4. Update the OS  
-&nbsp;4. Installing WiFi Driver  
-&nbsp;5. Installing Pihole  
-&nbsp;6. Installing Unbound  
+        &nbsp; &nbsp; &nbsp; 3.2. [SSH into Raspberry Pi](#32-ssh-into-raspberry-pi)  
+        &nbsp; &nbsp; &nbsp; 3.3. [Change locale settings](#33-change-locale-settings)  
+        &nbsp; &nbsp; &nbsp; 3.4. [Update the OS](#34-update-the-os)  
+&nbsp;4. [Installing WiFi Driver](#4-installing-wifi-driver)  
+&nbsp;5. [Installing Pihole](#5-installing-pi-hole)  
+&nbsp;6. [Installing Unbound](#6-installing-unbound)  
 &nbsp;  
 
 
