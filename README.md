@@ -60,11 +60,19 @@ USB port.
 Before enabling the internet, make sure that the Pi is connected as a USB gadget.\
 Check ```sudo dmesg``` to confirm it. Look for lines similar to 
 ```
-.....(other things we don't care about right now).....
-[ 1943.306812] usb 1-12: new high-speed USB device number 14 using xhci_hcd
-[ 1943.494324] cdc_ether 1-12:1.0 usb0: register 'cdc_ether'  
-               at usb-0000:00:14.0-12, CDC Ethernet Device, 2e:2f:d7:3d:10:88
-[ 1943.526965] cdc_ether 1-12:1.0 enp0s20f0u12: renamed from usb0
+[  343.853507] usb 1-4: new full-speed USB device number 3 using xhci_hcd
+[  345.088725] usb 1-4: new high-speed USB device number 4 using xhci_hcd
+[  345.243731] usb 1-4: New USB device found, idVendor=0525, idProduct=a4a2, bcdDevice= 5.10
+[  345.243740] usb 1-4: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[  345.243743] usb 1-4: Product: RNDIS/Ethernet Gadget
+[  345.243746] usb 1-4: Manufacturer: Linux 5.10.17+ with 20980000.usb
+[  345.463183] cdc_subset: probe of 1-4:1.0 failed with error -22
+[  345.464195] cdc_subset 1-4:1.1 usb0: register 'cdc_subset' at usb-0000:03:00.3-4, Linux Device, e2:38:73:2d:01:39
+[  345.464248] usbcore: registered new interface driver cdc_subset
+[  345.464297] cdc_ether: probe of 1-4:1.0 failed with error -16
+[  345.464337] usbcore: registered new interface driver cdc_ether
+[  345.743346] bpfilter: Loaded bpfilter_umh pid 4407
+[  345.743711] Started bpfilter
 ```  
 ***
 **Note**:  
@@ -73,7 +81,8 @@ Give at least 30 seconds or more before trying the ```dmesg```
 
 If the last line says something like
 ```
-cdc_ether 1-12:1.0 usb0: unregister 'cdc_ether' ....
+[  887.699447] usb 1-4: USB disconnect, device number 4
+[  887.699969] cdc_subset 1-4:1.1 usb0: unregister 'cdc_subset' usb-0000:03:00.3-4, Linux Device
 ```
 
 that means the USB gadget mode was enabled and for some reason it got disconnected.  
@@ -124,8 +133,12 @@ sudo raspi-config
 &nbsp; the system.  
 ***
 &nbsp; **Note** :  
-&nbsp; Check ```dmesg``` again . If you see some messages saying something about kernel, reboot the host.   
+&nbsp; Check ```dmesg``` again . If you see some messages similar to below, reboot the host.   
 &nbsp; Only then re-connect the Pi.
+```
+[ 1131.255131] ------------[ cut here ]------------
+[ 1131.255137] NETDEV WATCHDOG: enx1a4d1a4fb05e (cdc_ether): transmit queue 0 timed out
+```
 ***
 
 &nbsp; Then follow the instructions on 3.1.  
@@ -191,7 +204,6 @@ interface wlan0
         static ip_address=192.168.X.X/24
         static routers=192.168.X.X
         static domain_name_servers=192.168.X.X     # probably your router ip
-        env wpa_supplicant_conf=/etc/wpa_supplicant/wpa_supplicant.conf
 ```
 &nbsp;
 
@@ -307,16 +319,3 @@ sudo service unbound restart
 &nbsp;  
 #### Configure pihole
 Finally, configure Pi-hole to use your recursive DNS server by specifying ```127.0.0.1#5335``` as the  Custom DNS (IPv4)  
-&nbsp;
-#### Configure network
-Set the ```static domain_name_servers``` in   ```/etc/dhcpcd.conf``` to ```127.0.0.1```;
-```
-interface wlan0
-        
-        static domain_name_servers=127.0.0.1
-        
-```
-Restart dhcp service;
-```
-sudo systemctl restart dhcpcd.service
-```
