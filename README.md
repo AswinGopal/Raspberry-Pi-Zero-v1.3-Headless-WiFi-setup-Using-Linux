@@ -133,8 +133,7 @@ sudo raspi-config
 &nbsp; the system.  
 ***
 &nbsp; **Note** :  
-&nbsp; Check ```dmesg``` again . If you see some messages similar to below, reboot the host.   
-&nbsp; Only then re-connect the Pi.
+&nbsp; Check ```dmesg``` again . If you see some messages similar to below, reboot the host. Only then re-connect the Pi.
 ```
 [ 1131.255131] ------------[ cut here ]------------
 [ 1131.255137] NETDEV WATCHDOG: enx1a4d1a4fb05e (cdc_ether): transmit queue 0 timed out
