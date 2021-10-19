@@ -42,7 +42,7 @@ the```boot```partition of the SD card.\
 &nbsp;
 
 Add ```dtoverlay=dwc2``` to ```config.txt``` and\
-Add ```add modules-load=dwc2,g_ether``` after the ```rootwait``` in ```cmdline.txt```  
+Add ```modules-load=dwc2,g_ether``` after the ```rootwait``` in ```cmdline.txt```  
 &nbsp;  
 ***
 **Note**: leave a space before and after the ```add modules-load=dwc2,g_ether``` line.  
