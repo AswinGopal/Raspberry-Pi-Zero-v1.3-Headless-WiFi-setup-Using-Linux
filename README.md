@@ -29,7 +29,7 @@ a) Raspberry Pi Zero v1.3
 b) USB data cable  
 c) Raspbian OS  
 d) A charger  
-e) Ubuntu 20.04 lts  
+e) Ubuntu 20.04 lts ( mentioned as host OS in this article )  
 f) Raspberry Pi Imager tool  
 g) SD card  
 h) [WiFi adapter](https://robu.in/product/rtl8188-mini-usb-wireless-network-card-150mbps-wifi-dongle/)
@@ -91,10 +91,9 @@ If you get this, check  whether the USB cable was connected to the USB port on t
 Once confirmed that everything is working fine, goto gnome-network-manager gui and change the [USB ethernet's](https://raw.githubusercontent.com/AswinGopal/Raspberry-Pi-Zero-v1.3-Headless-WiFI-setup-Using-Linux/main/images/network_settings.png)  
 [IPv4 setting](https://raw.githubusercontent.com/AswinGopal/Raspberry-Pi-Zero-v1.3-Headless-WiFI-setup-Using-Linux/main/images/ipv4_setting.png) to ```shared to other computers```.  
 
-Disconnect and the reconnect the USB ethernet in the gui. ( Might be needed to dis/connect the
-PCI ethenet, which is your PC's internet connection,  also ).  
+Disconnect and then reconnect the USB ethernet in the gui. If that doesn't allow you to ssh into the Pi, you might also need to dis/reconnect the PCI ethernet option.
 
-Now you should be able to SSH into the internet ready Pi.  
+Now you should be able to SSH into the Internet ready Pi.  
 &nbsp;
 ### 3.2 SSH into Raspberry Pi
 
@@ -128,18 +127,27 @@ sudo raspi-config
 
 &nbsp;  Now its time to shutdown the Pi to take effect the changes.  
 
-&nbsp;  Reboot seems to be breaking the USB ethernet gadget for some reason. Hence you need to shutdown  
-&nbsp; the system.  
+&nbsp;  Reboot seems to be breaking the USB ethernet gadget mode for some reason. Hence you need to shutdown the system.  
+&nbsp;  
+
 ***
 &nbsp; **Note** :  
-&nbsp; Check ```dmesg``` again . If you see some messages similar to below, reboot the host. Only then re-connect the Pi.
+
+&nbsp; Check ```dmesg``` again . If you see some messages similar to below, reboot the host linux OS. Only then re-connect the Pi.
 ```
 [ 1131.255131] ------------[ cut here ]------------
 [ 1131.255137] NETDEV WATCHDOG: enx1a4d1a4fb05e (cdc_ether): transmit queue 0 timed out
-```
+[ 1131.255158] WARNING: CPU: 6 PID: 0 at net/sched/sch_generic.c:467 dev_watchdog+0x24f/0x260
+.
+.
+.
+[ 1131.255535] ---[ end trace 07a143fded20143c ]---
+```  
+I got this message even afer a reboot. In that case disconnect the Pi and check the SD card for any filesystem errors. Reboot the host OS
+again and reconnect the Pi.
 ***
 
-&nbsp; Then follow the instructions on 3.1.  
+&nbsp; Then follow the instructions on [3.1](#31-enabling-internet-access-in-raspberry-pi).  
 &nbsp;  
 ### 3.4 Update the OS
 ```
@@ -148,12 +156,12 @@ sudo apt Update
 ```
 sudo apt upgrade
 ```
-&nbsp;  Shutdown and un/replug the Pi. Follow 3.1.  
+&nbsp;  Shutdown and un/replug the Pi. Follow [3.1](#31-enabling-internet-access-in-raspberry-pi).  
 &nbsp;  
 ## 4 Installing WiFi Driver
 If you bought a WiFi adapter like [this one](https://robu.in/product/rtl8188-mini-usb-wireless-network-card-150mbps-wifi-dongle/)  which does not have a native driver support in the OS, you need to install it.  
 For that you need to know the device id of the WiFi adapter. To know the device id,
- just plugin the WiFi adapter to your PC and run ```lsusb```. It will show the device 
+ just plugin the WiFi adapter to your host PC and run ```lsusb```. It will show the device 
  id like 
  ```
  Bus 001 Device 002: ID 0bda:f179 Realtek Semiconductor Corp.
@@ -171,6 +179,7 @@ elif cat .lsusb | grep -i '0BDA:F179' ; then
 		driver=8188fu
 ```
 This  means that for the device id ```0bda:f179``` you need to install the driver ```8188fu```.  
+
 Once you made sure that the driver is available, run the following commands;
 ```
 sudo wget http://downloads.fars-robotics.net/wifi-drivers/install-wifi -O /usr/bin/install-wifi
@@ -187,7 +196,7 @@ If it says,
 Checking for a 8188fu wifi driver module for your current kernel.
 There is a driver module available for this kernel revision.
 ```
-then you can install the WiFi driver by
+then you can proceed to install the WiFi driver by
 ```
 sudo install-wifi "your driver"
 ```
@@ -201,7 +210,7 @@ To give a static IP address to the WiFi, add these line to ```/etc/dhcpcd.conf``
 interface wlan0
         static ip_address=192.168.X.X/24
         static routers=192.168.X.X
-        static domain_name_servers=192.168.X.X     # probably your router ip
+        static domain_name_servers=192.168.X.X     # probably your router ip or any third-party dns 
 ```
 &nbsp;
 
