@@ -1,13 +1,9 @@
 
 # Raspberry Pi Zero v1.3 Headless WiFi Setup For Pihole Using Linux
 
-The following instructions will ultimately enable your Pi Zero to automatically connect the WiFi  
-to the router during every boot up, for complete headless management.  
-***
-**Note**:  
-Follow this guide only if your WiFi chipset is not natively supported by the Raspian OS.
+The following instructions will ultimately enable your Pi Zero to automatically connect the WiFi to the router during every boot up, 
+for a complete headless management.  
 
-***
 &nbsp;
 ## Appendix
 &nbsp;1. [Prerequisite](#1-prerequisite)  
@@ -45,7 +41,7 @@ Add ```dtoverlay=dwc2``` to ```config.txt``` and\
 Add ```modules-load=dwc2,g_ether``` after the ```rootwait``` in ```cmdline.txt```  
 &nbsp;  
 ***
-**Note**: leave a space before and after the ```add modules-load=dwc2,g_ether``` line.  
+**Note**: Leave a space before and after the ```add modules-load=dwc2,g_ether``` line.  
 ***
 &nbsp;  
 Make an empty ```ssh``` file inside the same partition to enable SSH on boot.  
