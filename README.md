@@ -45,7 +45,7 @@ Add ```modules-load=dwc2,g_ether``` after the ```rootwait``` in ```cmdline.txt``
 **Note**: Leave a space before and after the ```add modules-load=dwc2,g_ether``` line.  
 ***
 &nbsp;  
-Make an empty ```ssh``` file inside the same partition to enable SSH on boot.  
+Make an empty file inside the same partition and name it ```ssh``` to enable SSH on boot.  
 &nbsp;  
 Now connect the USB data cable to the USB port of the Pi and plug it in the PC's   
 USB port.
