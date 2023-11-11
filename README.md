@@ -36,8 +36,7 @@ h) [WiFi adapter](https://robu.in/product/rtl8188-mini-usb-wireless-network-card
 Install Raspbian OS to the SD card using Raspberry Pi Imager tool.
 
 To enable the gadget mode, edit ```config.txt``` and ```cmdline.txt``` files in 
-the```boot```partition of the SD card.\
-&nbsp;
+the```boot```partition of the SD card.
 
 Add ```dtoverlay=dwc2``` to ```config.txt``` and\
 Add ```modules-load=dwc2,g_ether``` after the ```rootwait``` in ```cmdline.txt```  
