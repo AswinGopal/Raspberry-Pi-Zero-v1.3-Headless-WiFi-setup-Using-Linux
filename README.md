@@ -1,8 +1,7 @@
 
 # Raspberry Pi Zero v1.3 Headless WiFi Setup For Pihole Using Linux
 
-The following instructions will ultimately enable your Pi Zero to automatically connect the WiFi to the router during every boot up, 
-for a complete headless management.  
+The following steps will enable your Pi Zero to automatically connect to the router via WiFi during every boot up, allowing for complete headless management.  
 
 &nbsp;
 ## Appendix
