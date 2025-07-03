@@ -63,7 +63,7 @@ Look for similar lines as shown below;
 [  345.088725] usb 1-4: new high-speed USB device number 4 using xhci_hcd
 [  345.243731] usb 1-4: New USB device found, idVendor=0525, idProduct=a4a2, bcdDevice= 5.10
 [  345.243740] usb 1-4: New USB device strings: Mfr=1, Product=2, SerialNumber=0
-[  345.243743] usb 1-4: Product: RNDIS/Ethernet Gadget
+***[  345.243743] usb 1-4: Product: RNDIS/Ethernet Gadget***
 [  345.243746] usb 1-4: Manufacturer: Linux 5.10.17+ with 20980000.usb
 [  345.463183] cdc_subset: probe of 1-4:1.0 failed with error -22
 [  345.464195] cdc_subset 1-4:1.1 usb0: register 'cdc_subset' at usb-0000:03:00.3-4, Linux Device, e2:38:73:2d:01:39
