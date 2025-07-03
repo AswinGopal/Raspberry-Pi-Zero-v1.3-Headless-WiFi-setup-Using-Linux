@@ -83,7 +83,7 @@ If the last line says something like
 that means the USB gadget mode was enabled and for some reason it got disconnected.  
 If you get this, check  whether the USB cable was connected to the USB port on the Pi, not on the power port.
 
-Once confirmed that everything is working fine, goto gnome-network-manager gui and change the [USB ethernet](https://raw.githubusercontent.com/AswinGopal/Raspberry-Pi-Zero-v1.3-Headless-WiFI-setup-Using-Linux/main/images/network_settings.png)'s [IPv4 setting](https://raw.githubusercontent.com/AswinGopal/Raspberry-Pi-Zero-v1.3-Headless-WiFI-setup-Using-Linux/main/images/ipv4_setting.png) to ```shared to other computers```.  
+Once confirmed that everything is working fine, goto [gnome-network-manager gui](https://raw.githubusercontent.com/AswinGopal/Raspberry-Pi-Zero-v1.3-Headless-WiFI-setup-Using-Linux/main/images/network_settings.png) and change the ```USB Ethernet```'s [IPv4 setting](https://raw.githubusercontent.com/AswinGopal/Raspberry-Pi-Zero-v1.3-Headless-WiFI-setup-Using-Linux/main/images/ipv4_setting.png) to ```shared to other computers```.  
 
 Disconnect and then reconnect the ```USB Ethernet``` in the Network Manager GUI. If that doesn't allow you to ssh into the Pi, you might also need to dis/reconnect the ```PCI ethernet``` option (also in the GUI).
 
