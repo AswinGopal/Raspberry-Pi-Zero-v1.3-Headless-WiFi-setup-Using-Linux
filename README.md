@@ -73,12 +73,13 @@ Look for similar lines as shown below;
 [  345.743346] bpfilter: Loaded bpfilter_umh pid 4407
 [  345.743711] Started bpfilter
 ```  
-
+***
 If the last line says something like
 ```
 [  887.699447] usb 1-4: USB disconnect, device number 4
 [  887.699969] cdc_subset 1-4:1.1 usb0: unregister 'cdc_subset' usb-0000:03:00.3-4, Linux Device
 ```
+***
 
 that means the USB gadget mode was enabled and for some reason it got disconnected.  
 If you get this, check  whether the USB cable was connected to the USB port on the Pi, not on the power port.
