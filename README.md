@@ -55,11 +55,11 @@ USB port.
 
 Before enabling the internet, make sure that the Pi is connected as a USB gadget.\
 Check ```sudo dmesg``` to confirm it. Look for lines similar to 
-```
+***
 **Note**:  
 Give at least 30 seconds or more before trying the ```dmesg```  
 ***
-
+```
 [  343.853507] usb 1-4: new full-speed USB device number 3 using xhci_hcd
 [  345.088725] usb 1-4: new high-speed USB device number 4 using xhci_hcd
 [  345.243731] usb 1-4: New USB device found, idVendor=0525, idProduct=a4a2, bcdDevice= 5.10
@@ -74,7 +74,6 @@ Give at least 30 seconds or more before trying the ```dmesg```
 [  345.743346] bpfilter: Loaded bpfilter_umh pid 4407
 [  345.743711] Started bpfilter
 ```  
-***
 
 If the last line says something like
 ```
