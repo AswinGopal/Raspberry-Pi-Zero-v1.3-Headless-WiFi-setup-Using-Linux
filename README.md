@@ -315,12 +315,11 @@ server:
     private-address: fd00::/8
     private-address: fe80::/10
 ``` 
-&nbsp;
 
 Restart the Unbound  
 ```
 sudo service unbound restart
 ```
-&nbsp;  
+  
 #### Configure pihole
 Finally, configure Pi-hole to use your recursive DNS server by specifying ```127.0.0.1#5335``` as the  Custom DNS (IPv4)  
