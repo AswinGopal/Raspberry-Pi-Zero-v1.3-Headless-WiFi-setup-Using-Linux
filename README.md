@@ -54,11 +54,13 @@ USB port.
 ### 3.1 Enabling Internet access in Raspberry Pi
 
 Before enabling the internet, make sure that the Pi is connected as a USB gadget.\
-Check ```sudo dmesg``` to confirm it. Look for lines similar to 
+
+Check ```sudo dmesg``` to confirm it.
 ***
 **Note**:  
 Give at least 30 seconds or more before trying the ```dmesg```  
 ***
+Look for similar lines as shown below;
 ```
 [  343.853507] usb 1-4: new full-speed USB device number 3 using xhci_hcd
 [  345.088725] usb 1-4: new high-speed USB device number 4 using xhci_hcd
