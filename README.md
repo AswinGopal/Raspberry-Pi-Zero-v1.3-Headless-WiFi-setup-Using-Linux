@@ -74,7 +74,10 @@ Look for similar lines as shown below;
 [  345.743711] Started bpfilter
 ```  
 ***
-If the last line says something like
+**Note**:
+Sometimes the Pi will be connected as a USB gadget ```[  345.243743] usb 1-4: Product: RNDIS/Ethernet Gadget``` but it can get disconnected.
+
+If the last line says something like;
 ```
 [  887.699447] usb 1-4: USB disconnect, device number 4
 [  887.699969] cdc_subset 1-4:1.1 usb0: unregister 'cdc_subset' usb-0000:03:00.3-4, Linux Device
