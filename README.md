@@ -75,7 +75,7 @@ Look for similar lines as shown below;
 ```  
 ***
 **Note**:
-Sometimes the Pi will be connected as a USB gadget ```[  345.243743] usb 1-4: Product: RNDIS/Ethernet Gadget``` but it can get disconnected.
+Sometimes the Pi will be connected as a USB gadget ```[  345.243743] usb 1-4: Product: RNDIS/Ethernet Gadget```, but it can get disconnected.
 
 If the last line says something like;
 ```
