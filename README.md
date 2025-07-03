@@ -85,7 +85,7 @@ If you get this, check  whether the USB cable was connected to the USB port on t
 
 Once confirmed that everything is working fine, goto gnome-network-manager gui and change the [USB ethernet](https://raw.githubusercontent.com/AswinGopal/Raspberry-Pi-Zero-v1.3-Headless-WiFI-setup-Using-Linux/main/images/network_settings.png)'s [IPv4 setting](https://raw.githubusercontent.com/AswinGopal/Raspberry-Pi-Zero-v1.3-Headless-WiFI-setup-Using-Linux/main/images/ipv4_setting.png) to ```shared to other computers```.  
 
-Disconnect and then reconnect the ```USB Ethernet``` in the Network Manager GUI. If that doesn't allow you to ssh into the Pi, you might also need to dis/reconnect the PCI ethernet option.
+Disconnect and then reconnect the ```USB Ethernet``` in the Network Manager GUI. If that doesn't allow you to ssh into the Pi, you might also need to dis/reconnect the ```PCI ethernet``` option (also in the GUI).
 
 Now you should be able to SSH into the Internet ready Pi.  
 &nbsp;
